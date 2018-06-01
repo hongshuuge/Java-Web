@@ -1,26 +1,36 @@
-<%@ page contentType="text/html; charset=gbk" import="Jerry.User"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"
+	import="java.util.*"%>
 
 <html>
-<style type="text/css">
-body {
-	background-image: url(image/ab.jpg);
-	background-size: cover;
-}
-</style>
 <body>
+	<h2 style="color:#00FFFF">æ¬¢è¿é¡µé¢</h2>
 
-	<h1>
-		µÇÂ¼³É¹¦,<%=session.getAttribute("username")%></h1>
-	<h2><%="ÏÖÔÚÊÇ±±¾©Ê±¼ä£º"%></h2>
+	<%
+		String Login = (String) session.getAttribute("Login");
+		if (Login != null && Login.equals("OK")) {
+	%>
+	<h1 style="color:0000CD">
+		ç™»å½•æˆåŠŸ</h1>
+	<h2 style="color:#C71585"><%="ç°åœ¨æ˜¯åŒ—äº¬æ—¶é—´ï¼š"%></h2>
 	<script language="javascript">
 		document.write(new Date());
 	</script>
-	<div align="center" >
-	<h1 style="color:red">ÇëĞÀÉÍÊÓÆµ</h1>
+	<div align="center">
+		<h1 style="color: red">è¯·æ¬£èµè§†é¢‘</h1>
 	</div>
 	<div align="center">
 		<video src="image/h.mp4" width="800px" height="600px"
 			controls="controls"></video>
 	</div>
+	<input type=button value="é€€å‡º" style="color:red"
+		onclick="javascript:location.href='handlelogin.jsp'">
+	<%
+		} else {
+	%>
+	<jsp:forward page="Hello1.jsp" />
+	<%
+		}
+	%>
+
 </body>
 </html>

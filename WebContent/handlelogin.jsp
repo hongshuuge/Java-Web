@@ -1,14 +1,18 @@
-<%@page contentType="text/html; charset=gbk" import="Jerry.User" %>
+<%@ page contentType="text/html;charset=UTF-8" %>  
+<html>  
+   
+ <%  
+    session.setAttribute("Login", "");  
+ %>  
+         <style type="text/css">      
+     body{      
+        background-image: url(image/ad.jpg);      
+        background-size:cover;    
+     }      
+ </style>
+ <body>  
+  <h2 style="color:#FF00FF">æ‚¨å·²ç»é€€å‡ºç™»å½•</h2> 
+  <h2 style="color:0000FF">æ¬¢è¿ä¸‹æ¬¡å›æ¥</h2> 
+ </body>  
   
-  <!-- ÄÚÇ¶java´úÂë£¬Ö÷Òª¿ØÖÆÂß¼­Ìø×ª -->
-  <%
-      String username = request.getParameter("username");
-      String pwd = request.getParameter("pwd");
-      if(username.equals("a")&&pwd.equals("1")){
-          User u = new User(username,pwd);
-          session.setAttribute("username",username);
-        pageContext.forward("ok.jsp");
-     }else{
-         pageContext.forward("Hello.jsp");
-     }
- %>l>
+</html> 
